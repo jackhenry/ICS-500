@@ -25,7 +25,7 @@ const signup = async (req, res, next) => {
         await UserService.updateUserRole(user.user_id, userRole.role_id);
     }
 
-    return res.status(200).send();
+    return res.status(200).send(user);
 }
 
 const login = async (req, res, next) => {
