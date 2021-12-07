@@ -251,3 +251,14 @@ describe('PUT /rom/:romid', () => {
         
     })
 });
+
+describe('GET /associate', () => {
+    let dummyRomData = {
+        name: "first title",
+        romdata: "rom data"
+    }
+
+    let dummyUserData = {
+        
+    }
+})
