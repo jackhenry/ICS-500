@@ -15,7 +15,8 @@ const REQUIRED_FIELDS = Object.keys(db.rom.rawAttributes);
 describe('POST /signup', () => {
     let dummyUser = {
         email: "testemail",
-        password: "testpassword"
+        password: "testpassword",
+        title: "Admin"
     };
     
     beforeEach(async () => {
