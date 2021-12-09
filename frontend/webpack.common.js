@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/ICS-500',
+    publicPath: '/ICS-500/',
   },
   devServer: {
     historyApiFallback: true,
@@ -39,12 +39,23 @@ module.exports = {
           {
             // import image files
             loader: 'file-loader',
+            options: {
+              publicPath: '/ICS-500'
+            }
           },
         ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        //type: 'asset/resource',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/ICS-500'
+            },
+          }
+        ],
       },
       {
         test: /\.(csv|tsv)$/i,
