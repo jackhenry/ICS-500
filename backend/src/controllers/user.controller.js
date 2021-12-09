@@ -36,8 +36,8 @@ const login = async (req, res, next) => {
     if (login_session === null) {
         return res.status(422).json({ message: "Invalid email or password" });
     }
-
     res.cookie('session', JSON.stringify(login_session));
+    res.cookie.expires = false;
     return res.writeHead(200, {
         "Content-Type": "application/json; charset=utf-8",
         "Access-Control-Allow-Credentials": "true"
